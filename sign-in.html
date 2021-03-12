@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Log in</title>
+
+  <style>
+
+/* variables */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root {
+  /* colors */
+  --primary: #044f99;
+  --secondary: #ffffff;
+  --success: #46e84e;
+}
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .signin-page-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-form {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary);
+  width: 50%;
+  padding: 20px 0;
+  border-radius: 5px;
+}
+
+.signin-form input,
+.signin-form .signin-button {
+  width: 90%;
+  height: 35px;
+  margin: 5px;
+  padding: 5px;
+  font-size: 1.15em;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+}
+
+.signin-form .signin-button,
+.add-project,
+.modal-form .create-project {
+  background-color: var(--success);
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  margin-bottom: 15px;
+  color: var(--secondary);
+}
+  </style>
+</head>
+<body>
+  <main class="signin-page-container">
+    
+    <div class="signin-form">
+      <h2>Admin Inloggen</h2>
+      <input type="text" class="username" id="username" placeholder="Gebruikersnaam">
+      <input type="password" class="password" id="password" placeholder="Wachtwoord">
+      <a href="" id="signin-button" class="signin-button">Inloggen</a>
+      <a href="" class="forgot-password-link">Wachtwoord vergeten?</a>
+    </div>
+
+  </main>
+
+  <!-- FIREBASE -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDr1vGQUtyYv8SKLjdmbEBn2wD32B7TM34",
+    authDomain: "my-project-1557233171327.firebaseapp.com",
+    databaseURL: "https://my-project-1557233171327.firebaseio.com",
+    projectId: "my-project-1557233171327",
+    storageBucket: "my-project-1557233171327.appspot.com",
+    messagingSenderId: "583723257921",
+    appId: "1:583723257921:web:79e0fb08f881502dc576c0",
+    measurementId: "G-MZTY1P8DG8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  signinButton = document.querySelector('#signin-button');
+
+signinButton.addEventListener('click', function(e) {
+  e.preventDefault();
+  email = document.getElementById('username').value;
+  password = document.getElementById('password').value;
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
+      console.log(user);
+      // ...
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+    });
+
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+    .then(() => {
+      return firebase.auth().signInWithEmailAndPassword(email, password);
+    });
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      window.location.href = 'index.html'
+    }
+  });
+  
+});
+
+
+// Projects
+
+// modal
+
+</script>
+</body>
+</html>
