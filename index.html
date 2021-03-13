@@ -38,10 +38,32 @@
     label:hover {
       cursor: pointer;
     }
+
     .submit:hover {
       cursor: pointer;
       font-weight: bold;
       background-color: #32cf3a;
+    }
+
+    .showdata {
+      padding: 5px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 4px;
+      border: 2px solid #444;
+      margin: 2px;
+    }
+
+    .showdata:hover {
+      cursor: pointer;
+      background-color: #444;
+      border: 1px solid #333;
+      font-weight: bold;
+    }
+
+    .datayear {
+      margin: 15px;
+      display: flex;
     }
 
     .seperator {
@@ -69,6 +91,11 @@
       text-align: center;
     }
 
+    .show-all-data {
+      display: flex;
+      margin: 15px;
+    }
+
   </style>
 </head>
 <body>
@@ -89,58 +116,58 @@
 
     <section class="datalist">
       <div class="show-all-data">
-        <a class="all submit" onclick="showData()">Alle meedingenden</a>
+        <a class="all showdata" onclick="showData()">Alle meedingenden</a>
       </div>
       <div class="datayear">
-        <a class="dyear">Volledig 2018</a>
-        <a class="dmonth">Jan 18</a>
-        <a class="dmonth">Feb 18</a>
-        <a class="dmonth">March 18</a>
-        <a class="dmonth">April 18</a>
-        <a class="dmonth">May 18</a>
-        <a class="dmonth">June 18</a>
-        <a class="dmonth">July 18</a>
-        <a class="dmonth">August 18</a>
-        <a class="dmonth">September 18</a>
-        <a class="dmonth">October 18</a>
-        <a class="dmonth">November 18</a>
-        <a class="dmonth">December 18</a>
+        <a class="dyear showdata" onclick="showDataYear('2018')">Volledig 2018</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2018', '01')">Jan 18</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2018', '02')">Feb 18</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2018', '03')">March 18</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2018', '04')">April 18</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2018', '05')">May 18</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2018', '06')">June 18</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2018', '07')">July 18</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2018', '08')">August 18</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2018', '09')">September 18</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2018', '10')">October 18</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2018', '11')">November 18</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2018', '12')">December 18</a>
       </div>
       <div class="datayear">
-        <a class="dyear">Volledig 2019</a>
-        <a class="dmonth">Jan 19</a>
-        <a class="dmonth">Feb 19</a>
-        <a class="dmonth">March 19</a>
-        <a class="dmonth">April 19</a>
-        <a class="dmonth">May 19</a>
-        <a class="dmonth">June 19</a>
-        <a class="dmonth">July 19</a>
-        <a class="dmonth">August 19</a>
-        <a class="dmonth">September 19</a>
-        <a class="dmonth">October 19</a>
-        <a class="dmonth">November 19</a>
-        <a class="dmonth">December 19</a>
+        <a class="dyear showdata" onclick="showDataYear('2019')">Volledig 2019</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2018', '01')">Jan 19</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2019', '02')">Feb 19</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2019', '03')">March 19</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2019', '04')">April 19</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2019', '05')">May 19</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2019', '06')">June 19</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2019', '07')">July 19</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2019', '08')">August 19</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2019', '09')">September 19</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2019', '10')">October 19</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2019', '11')">November 19</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2019', '12')">December 19</a>
       </div>
       <div class="datayear">
-        <a class="dyear">Volledig 2020</a>
-        <a class="dmonth">Jan 20</a>
-        <a class="dmonth">Feb 20</a>
-        <a class="dmonth">March 20</a>
-        <a class="dmonth">April 20</a>
-        <a class="dmonth">May 20</a>
-        <a class="dmonth">June 20</a>
-        <a class="dmonth">July 20</a>
-        <a class="dmonth">August 20</a>
-        <a class="dmonth">September 20</a>
-        <a class="dmonth">October 20</a>
-        <a class="dmonth">November 20</a>
-        <a class="dmonth">December 20</a>
+        <a class="dyear showdata" onclick="showDataYear('2020')">Volledig 2020</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2020', '01')">Jan 20</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2020', '02')">Feb 20</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2020', '03')">March 20</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2020', '04')">April 20</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2020', '05')">May 20</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2020', '06')">June 20</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2020', '07')">July 20</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2020', '08')">August 20</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2020', '09')">September 20</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2020', '10')">October 20</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2020', '11')">November 20</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2020', '12')">December 20</a>
       </div>
       <div class="datayear">
-        <a class="dyear">Volledig 2021</a>
-        <a class="dmonth">Jan 21</a>
-        <a class="dmonth">Feb 21</a>
-        <a class="dmonth">March 21</a>
+        <a class="dyear showdata" onclick="showDataYear('2021')">Volledig 2021</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2021', '01')">Jan 21</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2021', '02')">Feb 21</a>
+        <a class="dmonth showdata" onclick="showDataMonth('2021', '03')">March 21</a>
       </div>
     </section>
 
@@ -206,7 +233,7 @@
       }
     });
   
-  function submitData() {
+    function submitData() {
       let id = new Date().valueOf();
       let date = document.getElementById('date').value;
       let name = document.getElementById('name').value;
@@ -228,37 +255,96 @@
         amount,
         inout
       }
-
       firebase.database().ref(user.uid+'/'+id).set(datarow);
+      document.querySelector("tbody").innerHTML = ""
 
     }
-  function showData() {
-    firebase.database().ref(user.uid).orderByChild('inout').on('value', function(snapshot){
-      snapshot.forEach(function(child) {
-        let value = child.val();
+    function showData() {
+      document.querySelector("tbody").innerHTML = ""
+      var tbody = document.querySelector("tbody");
 
-        var tbody = document.querySelector("tbody");
-        var template = document.querySelector('#datarow');
+      var template = document.querySelector('#datarow');
 
-        var clone = template.content.cloneNode(true);
-        var td = clone.querySelectorAll("td");
-        td[0].textContent = value.id;
-        td[1].textContent = value.date;
-        td[2].textContent = value.name;
-        td[3].textContent = value.inout;
-        td[4].textContent = value.amount;
+      firebase.database().ref(user.uid).orderByChild('date').on('value', function(snapshot){
+        snapshot.forEach(function(child) {
+          let value = child.val();
+          var clone = template.content.cloneNode(true);
+          var td = clone.querySelectorAll("td");
+          td[0].textContent = value.id;
+          td[1].textContent = value.date;
+          td[2].textContent = value.name;
+          td[3].textContent = value.inout;
+          td[4].textContent = value.amount;
 
-        tbody.appendChild(clone);
-        // let adate = value.date;
-        // let year = adate.split('-');
-        // year = year[0];
-        // if(year == '2018')
-        // {
-        //   console.log(value);
-        // }
-    });
-    });
-  }
+          tbody.appendChild(clone);
+          // let adate = value.date;
+          // let year = adate.split('-');
+          // year = year[0];
+          // if(year == '2018')
+          // {
+          //   console.log(value);
+          // }
+      });
+      });
+    }
+
+    function showDataYear(datayear) {
+      document.querySelector("tbody").innerHTML = ""
+      var tbody = document.querySelector("tbody");
+
+      var template = document.querySelector('#datarow');
+
+      firebase.database().ref(user.uid).orderByChild('date').on('value', function(snapshot){
+        snapshot.forEach(function(child) {
+          let value = child.val();
+          var clone = template.content.cloneNode(true);
+          var td = clone.querySelectorAll("td");
+          let adate = value.date;
+          let year = adate.split('-');
+          year = year[0];
+          if(year == datayear)
+          {
+            td[0].textContent = value.id;
+            td[1].textContent = value.date;
+            td[2].textContent = value.name;
+            td[3].textContent = value.inout;
+            td[4].textContent = value.amount;
+            tbody.appendChild(clone);
+          }
+
+      });
+      });
+    }
+
+    function showDataMonth(datayear, datamonth) {
+      document.querySelector("tbody").innerHTML = ""
+      var tbody = document.querySelector("tbody");
+
+      var template = document.querySelector('#datarow');
+
+      firebase.database().ref(user.uid).orderByChild('date').on('value', function(snapshot){
+        snapshot.forEach(function(child) {
+          let value = child.val();
+          var clone = template.content.cloneNode(true);
+          var td = clone.querySelectorAll("td");
+          let adate = value.date;
+          let sepdate = adate.split('-');
+          year = sepdate[0];
+          month = sepdate[1];
+          if(year == datayear && month == datamonth)
+          {
+            console.log('here');
+            td[0].textContent = value.id;
+            td[1].textContent = value.date;
+            td[2].textContent = value.name;
+            td[3].textContent = value.inout;
+            td[4].textContent = value.amount;
+            tbody.appendChild(clone);
+          }
+
+      });
+      });
+    }
   </script>
 </body>
 </html>
